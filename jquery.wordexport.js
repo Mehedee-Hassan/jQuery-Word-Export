@@ -4,9 +4,33 @@ if (typeof jQuery !== "undefined" && typeof saveAs !== "undefined") {
             fileName = typeof fileName !== 'undefined' ? fileName : "jQuery-Word-Export";
             var static = {
                 mhtml: {
-                    top: "Mime-Version: 1.0\nContent-Base: " + location.href + "\nContent-Type: Multipart/related; boundary=\"NEXT.ITEM-BOUNDARY\";type=\"text/html\"\n\n--NEXT.ITEM-BOUNDARY\nContent-Type: text/html; charset=\"utf-8\"\nContent-Location: " + location.href + "\n\n<!DOCTYPE html>\n<html>\n_html_</html>",
-                    head: "<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<style>\n_styles_\n</style>\n</head>\n",
-                    body: "<body>_body_</body>"
+                  top: "Mime-Version: 1.0\nContent-Base: " + location.href
+                   + "\nContent-Type: Multipart/related; boundary=\"NEXT.ITEM-BOUNDARY\";type=\"text/html\"\n\n--NEXT.ITEM-BOUNDARY\nContent-Type: text/html;"
+                   +" charset=\"utf-8\"\nContent-Location: " + location.href + "\n\n<!DOCTYPE html>\n<html "
+
+                   +"xmlns:v='urn:schemas-microsoft-com:vml'"
+                   + "xmlns:o='urn:schemas-microsoft-com:office:office'"
+                   + " xmlns:w='urn:schemas-microsoft-com:office:word'"
+                   + "xmlns='http:///www.w3.org/TR/REC-html40'"
+
+                   +">"
+
+                  +"\n_html_</html>",
+
+                   head: "<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n"
+                       + "<meta name=ProgId content=Word.Document>\n"
+                       + " <meta name=Generator content=\"Microsoft Word 9\">\n"
+                       + " <meta name=Originator content=\"Microsoft Word 9\">"
+
+                       + " <!--[if !mso]> <style> v\:* {behavior:url(#default#VML);}  o\:* {behavior:url(#default#VML);}"
+                       + "w\:* {behavior:url(#default#VML);} .shape {behavior:url(#default#VML);}</style> <!--[endif]-->"
+
+                       + "<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View> <w:DoNotHyphenateCaps/><w:PunctuationKerning/>"
+                       + "<w:DrawingGridHorizontalSpacing>9.35 pt</w:DrawingGridHorizontalSpacing><w:DrawingGridVerticalSpacing>9.35 pt"
+                       + "</w:DrawingGridVerticalSpacing></w:WordDocument></xml><![endif]-->"
+
+                       + "<style>\n_styles_\n</style>\n</head>\n",
+                   body: "<body>_body_</body>"
                 }
             };
             var options = {
